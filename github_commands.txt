@@ -6,3 +6,11 @@ git add -A - adds all files
 git commit -m "(insert quote)" - prepares for commit *if you forget to type -m, press: esc :wq (one at a time)*
 git push - push it to the repository
 git pull - get all updates from everyone to your local repository
+
+
+If you want to make another branch and treat you own branch like a master:
+
+/* ... */  <----- where you type file, create, or note
+
+git checkout -b /*some branch*/
+git status /* checks the branch your currently on */
