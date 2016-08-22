@@ -14,12 +14,22 @@ If you want to make another branch and treat you own branch like a master.  Crea
 
 /* ... */  <----- FYI, where you type file, create, or note
 
-git checkout -b   /*some branch*/
+git checkout -b   /* type: some branch*/
 git status   /* checks the branch your currently on */
 
 /* make changes in your project */
 
 git add -all   /* adds all files that were created or fixed */
-git commit -m   " /* leave a comment */ "
-git push origin  /* type branch currently on */
+git commit -m   " /* type: leave a comment */ "
+git push origin  /* type: type branch currently on */
+
+/* now merge those changes in the newly created branch to the old branch */
+
+git checkout /* type: old branch */
+git merge /* type: new branch you just created */
+git push origin /* type: old branch */
+
+/* if you want to delete the branch you just created locally and remotely */
+git branch -d /* type: newly created branch (deletes branch locally) */
+git push origin --delete /* type: newly created branch (deletes branche remotely) */
 
