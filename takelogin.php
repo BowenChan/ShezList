@@ -20,24 +20,29 @@
 
 	if($_SERVER["REQUEST_METHOD"] == "POST"){
 
-
+		echo("got here");
 		try{
 			$username = $_POST['username'];
 			$password = $_POST['userpassword'];
-			$sql = 'SELECT username, id FROM accounts WHERE email = "'.$username.'" AND password = "'.$password.'"';
-			
+			/*$sql = 'SELECT user_account.username, user_account.user_id FROM user_account, user WHERE user.email = "'.$username.'"" AND user.account password = "'.$password.'"';
+			*/
+
+
+			$sql = 'SELECT username, user_id FROM user_account WHERE username = "lynn"'; 
 			$resultset = $pdo->query($sql);
 
 			if($resultset->rowcount() > 0){
+				echo "got here";
 
-			
+
 				while ($row = $resultset->fetch())
 				{
 					$user[] = $row['username'];
-					$id[] = $row['id'];
+					$id[] = $row['user_id'];
 
 				}	
-					include 'index.html';
+					//include 'index.html';
+					include 'test.html.php';
 				}else{
 					echo "result is empty";
 			}

@@ -9,7 +9,9 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">  <!-- tells internet explore to use the latest rendering engine -->
 	<meta name="viewport" content="width = device-width, initial scale = 1"> <!-- Sets the page width size for the device and set the zoom level = 1 -->
  	
-	<script type='text/javascript' src='jquery-3.1.0.js'></script>
+	<!-- <script type='text/javascript' src='jquery-3.1.0.js'></script> -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 		
 <!-- link the cdn files from getbootstrap.com -->
 		
@@ -22,7 +24,7 @@
 		<!-- Optional theme -->
 		<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"> (content delivery network)-->
 		<link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css">  <!-- external file Locally -->
-		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
 	
 	<!-- <link rel="stylesheet" type="text/css" href="style.css" />
  -->
@@ -76,16 +78,16 @@
 
               <!-- change this to User Profile/Log out button if user is already logged in -->
               <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">Register</a></li>
+                <li><a href="register.html.php">Register</a></li>
               </ul>
               <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">Log In</a></li>
+                <li><a href="login.html.php">Log In</a></li>
               </ul>
               
             </div>
           </div>
         </nav>
-      </div>
+      
 
 
 
@@ -103,21 +105,21 @@
 						<!-- <div class="col-lg-6 col-md-6 col-xs-6 col-xs-push-3 bg-info"> -->
 						
 						 	
-						<div class="jumbotron col-lg-6 col-md-12 col-xs-12 col-lg-push-3" style="background-color:white; color:white">
+						<div class="jumbotron col-lg-12 col-md-12 col-xs-12 col-lg-push-2" style="background-color:white; color:white">
 							
 							<!-- <h2 style="color:white"> Login </h2> -->
 							<div class="container ">
 								<img src="Images/ShezList_Logo_BGwhite.png"  class="img-responsive img-rounded"><br>
 								<form id="Login" action="takelogin.php" method="post">
 									<div class="row"> 
-										<div class="form-group col-lg-8 col-md-10 col-xs-12 col-lg-push-2">
+										<div class="form-group col-lg-4 col-md-6 col-xs-10 col-lg-push-1">
 											<input type="email" id="email" class="form-control" name="username" placeholder="email" style="background-color:#b4b3a2; border-radius: 6px">
 										</div>
 									</div>
 							<!-- <h2> Password </h2> -->
 							
 									<div class="row">
-										<div class="col-lg-8 col-md-10 col-xs-12 col-lg-push-2">
+										<div class="col-lg-4 col-md-6 col-xs-10 col-lg-push-1">
 											<input type="password" id="password" class="form-control" name="userpassword" placeholder="password" style="background-color:#b4b3a2; border-radius:6px">
 										</div>
 									</div>
@@ -125,18 +127,24 @@
 									<br>
 
 									<div class="row">
-										<div class="col-lg-3 col-md-3 col-xs-3 col-lg-push-2">
+										<div class="col-lg-2 col-md-3 col-xs-3 col-lg-push-1">
 											<input class="btn btn-primary" type="submit" value="Login">
 										</div>
-									</div>
+								</form>
 								
-									<br><br>
+									<!-- 	<div class="col-lg-2 col-md-3 col-xs-3 col-lg-push-2">
+											<input class="btn btn-info"  value="Register">
+										</div>
+									 --></div>
+								
+								
+									<br>
 
 									<div class="row">		
-										<div class="col-lg-12 col-xs-12 col-lg-push-2">
-											<A href="">Register Account</a> <font color="black">| </font> <A href="">Forgot Password</a> <font color="black">| </font> <A href="">Contact Us</a>
+										<div class="col-lg-12 col-xs-12 col-lg-push-1">
+											<A href="register.html.php">Register Account</a> <font color="black"> | </font> <A href="">Forgot Password</a> <font color="black">| </font> <A href="">Contact Us</a>
 										</div>	
-								</form>
+								
 							</div>
 						</div>
 							

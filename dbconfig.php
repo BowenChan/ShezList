@@ -1,6 +1,6 @@
 <?php
     $host = 'localhost';
-    $dbname = 'shezlistdb';
+    $dbname = 'shezlist';
     $dbusername = 'root';
     $dbpassword = 'sesame';
 
