@@ -8,9 +8,18 @@ git push - push it to the repository
 git pull - get all updates from everyone to your local repository
 
 
-If you want to make another branch and treat you own branch like a master:
 
-/* ... */  <----- where you type file, create, or note
+Lynn's Notes:
+If you want to make another branch and treat you own branch like a master.  Create another branch ontop of current branch.
 
-git checkout -b /*some branch*/
-git status /* checks the branch your currently on */
+/* ... */  <----- FYI, where you type file, create, or note
+
+git checkout -b   /*some branch*/
+git status   /* checks the branch your currently on */
+
+/* make changes in your project */
+
+git add -all   /* adds all files that were created or fixed */
+git commit -m   " /* leave a comment */ "
+git push origin  /* type branch currently on */
+
