@@ -28,7 +28,7 @@
 			*/
 
 
-			$sql = 'SELECT username, user_id FROM user_account WHERE username = "lynn"'; 
+			$sql = 'SELECT username, user_id FROM user_account WHERE username = "lynn"';  // make it dynamic
 			$resultset = $pdo->query($sql);
 
 			if($resultset->rowcount() > 0){
