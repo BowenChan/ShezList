@@ -57,33 +57,33 @@
                 <li><a href="#">Post</a></li>
                 <li><a href="#">FAQ</a></li>
                 <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Contact Us <span class="caret"></span></a>
+                  <!-- <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Contact Us <span class="caret"></span></a>
                   <ul class="dropdown-menu" role="menu">
                     <li><a href="#">Phone</a></li>
                     <li class="divider"></li>
                     <li><a href="#">Email</a></li>
                     <li class="divider"></li>
-                    <li><a href="#">Messenger</a></li>
+                    <li><a href="#">Messenger</a></li> -->
                   </ul>
                 </li>
               </ul>
 
               <!-- area to search, can change to however you want to make it easier for database handling -->
-              <form class="navbar-form navbar-right" role="search">
+              <!-- <form class="navbar-form navbar-right" role="search">
                 <div class="form-group">
                   <input type="text" class="form-control" placeholder="Search">
                 </div>
                 <button type="submit" class="btn btn-default">&#128269</button>
               </form>
-
+ -->
               <!-- change this to User Profile/Log out button if user is already logged in -->
-              <ul class="nav navbar-nav navbar-right">
+              <!-- <ul class="nav navbar-nav navbar-right">
                 <li><a href="register.html.php">Register</a></li>
               </ul>
               <ul class="nav navbar-nav navbar-right">
                 <li><a href="login.html.php">Log In</a></li>
               </ul>
-              
+               -->
             </div>
           </div>
         </nav>

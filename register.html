@@ -65,13 +65,13 @@
         <!--This is the main body the login form-->
         <div class="jumbotron">
             <div class="container-fluid">
-              <form class="form-horizontal">
+              <form class="form-horizontal" action="takeregister.php" method="post">
                 <fieldset>
                   <legend>Account Registration</legend>
                   <div class="form-group">
                     <label for="inputEmail" class="col-lg-2 control-label">Email</label>
                     <div class="col-lg-10">
-                      <input type="text" class="form-control" id="inputEmail" placeholder="Email">
+                      <input type="text" class="form-control" id="inputEmail" name="enteredEmail" placeholder="Email">
                     </div>
                     <label for="inputPassword" class="col-lg-2 control-label">Password</label>
                     <div class="col-lg-10">

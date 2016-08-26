@@ -20,31 +20,51 @@
 
 	if($_SERVER["REQUEST_METHOD"] == "POST"){
 
-		echo("got here");
-		try{
+		//echo("got here");
+		
 			$username = $_POST['username'];
 			$password = $_POST['userpassword'];
 			/*$sql = 'SELECT user_account.username, user_account.user_id FROM user_account, user WHERE user.email = "'.$username.'"" AND user.account password = "'.$password.'"';
 			*/
+			try{
+			/* Preventing SQL Injections by using prepared statement */
+			$sql = 'SELECT a.username, a.password as user_password, b.email as user_email FROM user_account a, user b WHERE b.email = :email AND a.password = :password';  // make it dynamic
+			$resultset = $pdo->prepare($sql);
+			$resultset->bindValue(':email', $username);
+			$resultset->bindValue(':password', $password);
+			/*$sth->bindParam(1, $colour, PDO::PARAM_STR|PDO::PARAM_INPUT_OUTPUT, 12);*/
+			$resultset->execute();
+			/*$resultset = $pdo->query($sql);
+*/
+ 			
+			
+			if($resultset->rowcount() == 1){
+				//echo "got here";
 
-
-			$sql = 'SELECT username, user_id FROM user_account WHERE username = "lynn"';  // make it dynamic
-			$resultset = $pdo->query($sql);
-
-			if($resultset->rowcount() > 0){
-				echo "got here";
-
-
+				$user;
+				$pwd;
 				while ($row = $resultset->fetch())
 				{
-					$user[] = $row['username'];
-					$id[] = $row['user_id'];
-
+					$user = $row['user_email'];
+					$pwd = $row['user_password'];
+					
 				}	
+
+				//echo($user);
+				//echo($pwd);
+
+					if($user == $username && $pwd == $password){
+						include 'index.html';
+					}else{
+					/* wrong password */
+					echo('wrong password');
+					}
+
 					//include 'index.html';
-					include 'test.html.php';
+					//include 'test.html.php';
 				}else{
 					echo "result is empty";
+					echo "WRONG username or password given";
 			}
 
 		} catch (PDOException $e){
