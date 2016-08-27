@@ -199,8 +199,28 @@ input:-ms-input-placeholder { /* Internet Explorer 10-11 */
 /*rgb 212 159 12*/
     }
 
- .form-control {
+ .form-control-custom {
  	    background-color:#b4b3a2;
+ 	    border-color: #fff;
     	border-radius: 6px;
 
  }
+
+ .btn-custom {
+  color: #555;
+  background-color: #ffffff;
+  border-color: #ffffff;
+}
+
+.btn-custom:hover,
+
+.btn-custom:focus,
+.btn-custom:active,
+.btn-customer.active,
+
+.btn-custom.active {
+  color: #fff;
+  background-color: #c71c22;
+  border-color: #c71c22;
+
+}

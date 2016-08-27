@@ -110,17 +110,17 @@
 							<!-- <h2 style="color:white"> Login </h2> -->
 							<div class="container ">
 								<img src="Images/ShezList_Logo_BGwhite.png"  class="img-responsive img-rounded"><br>
-								<form id="Login" action="takelogin.php" method="post">
+								<form id="Login" action="login-info.php" method="post">
 									<div class="row"> 
 										<div class="form-group col-lg-4 col-md-6 col-xs-10 col-lg-push-1">
-											<input type="email" id="email" class="form-control" name="username" placeholder="email">
+											<input type="email" id="email" class="form-control form-control-custom" name="username" placeholder="email">
 										</div>
 									</div>
 							<!-- <h2> Password </h2> -->
 							
 									<div class="row">
 										<div class="col-lg-4 col-md-6 col-xs-10 col-lg-push-1">
-											<input type="password" id="password" class="form-control" name="userpassword" placeholder="password">
+											<input type="password" id="password" class="form-control form-control-custom" name="userpassword" placeholder="password">
 										</div>
 									</div>
 
@@ -142,7 +142,7 @@
 
 									<div class="row">		
 										<div class="col-lg-12 col-xs-12 col-lg-push-1">
-											<A href="register.html.php">Register Account</a> <font color="black"> | </font> <A href="">Forgot Password</a> <font color="black">| </font> <A href="">Contact Us</a>
+											<A href="register.html">Register Account</a> <font color="black"> | </font> <A href="">Forgot Password</a> <font color="black">| </font> <A href="">Contact Us</a>
 										</div>	
 								
 							</div>
