@@ -103,7 +103,7 @@
 					<!-- <div class="row"> -->
 					
 						<!-- <div class="col-lg-6 col-md-6 col-xs-6 col-xs-push-3 bg-info"> -->
-						
+							
 						 	
 						<div class="jumbotron col-lg-12 col-md-12 col-xs-12 col-lg-push-2" style="background-color:white; color:white">
 							
@@ -113,14 +113,14 @@
 								<form id="Login" action="takelogin.php" method="post">
 									<div class="row"> 
 										<div class="form-group col-lg-4 col-md-6 col-xs-10 col-lg-push-1">
-											<input type="email" id="email" class="form-control" name="username" placeholder="email" style="background-color:#b4b3a2; border-radius: 6px">
+											<input type="email" id="email" class="form-control" name="username" placeholder="email">
 										</div>
 									</div>
 							<!-- <h2> Password </h2> -->
 							
 									<div class="row">
 										<div class="col-lg-4 col-md-6 col-xs-10 col-lg-push-1">
-											<input type="password" id="password" class="form-control" name="userpassword" placeholder="password" style="background-color:#b4b3a2; border-radius:6px">
+											<input type="password" id="password" class="form-control" name="userpassword" placeholder="password">
 										</div>
 									</div>
 

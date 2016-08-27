@@ -1,6 +1,7 @@
 <?php
   
-    include("dbconfig.php");
+    include "dbconfig.php";
+    include "validateUserName.php";
 
   try {
       $pdo = new PDO("mysql:host=$host;dbname=$dbname", $dbusername, $dbpassword);
@@ -25,48 +26,18 @@
   //echo($userEmail);
   $valid = validDateEmail($userEmail);
 
-  }
+    if($valid){
+        echo'true';
 
 
- 
-  function validDateEmail($email){
-
-  $mail_box = 0;
-  $domain_part = 1;
-  $email_confirm = 'sjsu.edu';
-
-  $domain = explode("@", $email);
-    
-  if(sizeof($domain) > 1 ){
-    //echo"<br> two parts";
-    $valid = $domain[$domain_part];
-    if($valid == $email_confirm){
-      //include 'login.html.php';
-      return true;
 
     }else{
-      echo"<br> invalid email address";
-      include 'register.html';
+      echo' NO! Please enter a valid @sjsu.edu account';
+      header('location: register.html');
+      //exit(0);
     }
 
-    
-
-  }else{
-    echo"<br> invalid email address";
-    include 'register.html';
   }
-  
-    /*echo('got here');
-  */
-  
-
-  //echo('<br>').($domain[$domain_name]);
-
-
-}
-
-
-
 
 
 
