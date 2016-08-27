@@ -33,7 +33,7 @@
 
     }else{
       echo' NO! Please enter a valid @sjsu.edu account';
-      header('location: register.html');
+      header('location: login-error.html');
       //exit(0);
     }
 

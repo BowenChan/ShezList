@@ -9,7 +9,7 @@ function validDateEmail($email){
 
   $domain = explode("@", $email);  //Splits domain name from domain address
     
-  if(sizeof($domain) > 1 ){         //checks if resultset of query has 1 row
+  if(sizeof($domain) > 1 ){         //checks if domain user used '@' in email address
     //echo"<br> two parts";
     $valid = $domain[$domain_part];  
     if($valid == $email_confirm){   //checks if user used 'sjsu.edu'
