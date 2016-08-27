@@ -28,7 +28,7 @@
 
     if($valid){
         echo'true';
-
+        include 'sendVerification.php';
 
 
     }else{
