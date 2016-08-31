@@ -1,10 +1,10 @@
 <?php
   
  //   include "dbconfig.php";
-    include "validateUserName.php";
-    include "make_connection.php";
-    include "query_user.php";
-    include 'sendVerification.php';
+    include "../Util/validateUserName.php";
+    include "../Util/make_connection.php";
+    include "../Util/query_user.php";
+    include "../Util/sendVerification.php";
        
 /*  try {
       $pdo = new PDO("mysql:host=$host;dbname=$dbname", $dbusername, $dbpassword);
@@ -36,26 +36,27 @@
         $resultset = find_user($pdo, $userEmail);
         
         if($resultset->rowcount() == 1){
+          $error_title = 'Account';
           $error = "Username Already Exist!!";
           $output = 'The username you type already exists in the our Database, If you have lost your password, please click on the "forgotten Password" to obtain a temporary password.';
-          include "login-error.html";
+          include "../Login/login-error.html";
           exit(0);
 
 
         }else{
 
-          $temp = "abc";
-          sendEmail($temp);
+          sendEmail($userEmail);
 
         }
         
         
 
     }else{
+      $error_title = 'Registration';
       $error ='Attention!!!';
       $output ='You must use a "@sjsu.edu" to register an account';
       //header('location: login-error.html');
-      include "login-error.html";
+      include "../Login/login-error.html";
       exit(0);
     }
 

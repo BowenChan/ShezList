@@ -19,8 +19,9 @@ $pdo = connect_to_db();
 
 			$valid = validDateEmail($username);
 			if($valid == 0){
+				$error_title = 'Login';
 				$error ='Invalid Email Address';
-				$output ='Must use a "sjsu.edu" domain name';
+				$output ='Must use a "@sjsu.edu" domain name';
 				include "login-error.html";
 				exit(0);
 			}
@@ -50,6 +51,7 @@ $pdo = connect_to_db();
 					//include("../homepage.html");
 					header("location: ../homepage.html"); 
 				}else{
+					$error_title = '';
 					$error="Password is incorrect";
 					$output='Please type the correct password ';
 					include 'login-error.html';
