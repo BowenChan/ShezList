@@ -1,9 +1,12 @@
 <?php 
 
 	
-include "make_connection.php";
-include "query_user.php";
-include "validateUserName.php";
+include "../Util/make_connection.php";
+include "../Util/query_user.php";
+include "../Util/validateUserName.php";
+
+
+
 $pdo = connect_to_db();
 
 
@@ -44,7 +47,8 @@ $pdo = connect_to_db();
 				
 				if($confirmPW){
 					//include 'index.html';
-					include 'index.html';
+					//include("../homepage.html");
+					header("location: ../homepage.html"); 
 				}else{
 					$error="Password is incorrect";
 					$output='Please type the correct password ';

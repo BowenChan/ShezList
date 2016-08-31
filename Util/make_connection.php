@@ -1,7 +1,7 @@
 <?php
 
 function connect_to_db(){
-include("dbconfig.php");
+include("../dbconfig.php");
 	try {
     	$pdo = new PDO("mysql:host=$host;dbname=$dbname", $dbusername, $dbpassword);
     	//echo "Connected to $dbname at $host successfully.\n";

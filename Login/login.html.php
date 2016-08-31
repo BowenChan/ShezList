@@ -18,13 +18,13 @@
 		<!-- Latest compiled and minified CSS -->
 		<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> Using the CDN (content delivery network) -->
 
-		<link rel="stylesheet" href="css/bootstrap.min.css"> <!-- external file Locally -->
+		<link rel="stylesheet" href="../css/bootstrap.min.css"> <!-- external file Locally -->
 		
 		
 		<!-- Optional theme -->
 		<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"> (content delivery network)-->
-		<link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css">  <!-- external file Locally -->
-		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" href="../bootstrap/css/bootstrap-theme.min.css">  <!-- external file Locally -->
+		<link rel="stylesheet" type="text/css" href="../css/style.css">
 	
 	<!-- <link rel="stylesheet" type="text/css" href="style.css" />
  -->
@@ -109,7 +109,7 @@
 							
 							<!-- <h2 style="color:white"> Login </h2> -->
 							<div class="container ">
-								<img src="Images/ShezList_Logo_BGwhite.png"  class="img-responsive img-rounded"><br>
+								<img src="../Images/ShezList_Logo_BGwhite.png"  class="img-responsive img-rounded"><br>
 								<form id="Login" action="login-info.php" method="post">
 									<div class="row"> 
 										<div class="form-group col-lg-4 col-md-6 col-xs-10 col-lg-push-1">
