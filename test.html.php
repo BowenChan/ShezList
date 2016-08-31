@@ -17,9 +17,9 @@
 			
 			<blockquote>
 			<div id="space">
-			<?php echo ("UserID: ") ?>  <?php echo htmlspecialchars($id[$counter],  ENT_QUOTES, 'UTF-8'); $counter++; ?>  <!-- htmlspecialchars to ensure that these are translated into HTML characters entities(Ex. &lt=less than, &gt, &amp) -->
+			<?php echo ("username: ") ?>  <?php echo htmlspecialchars($id[$counter],  ENT_QUOTES, 'UTF-8'); $counter++; ?>  <!-- htmlspecialchars to ensure that these are translated into HTML characters entities(Ex. &lt=less than, &gt, &amp) -->
 			
-			<?php echo ("Username: ") ?>  <?php echo htmlspecialchars($u,  ENT_QUOTES, 'UTF-8'); ?>
+			<?php echo ("Password: ") ?>  <?php echo htmlspecialchars($u,  ENT_QUOTES, 'UTF-8'); ?>
 			</div>
 			</blockquote>
 		

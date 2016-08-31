@@ -1,9 +1,12 @@
 <?php
   
-    include "dbconfig.php";
+ //   include "dbconfig.php";
     include "validateUserName.php";
-
-  try {
+    include "make_connection.php";
+    include "query_user.php";
+    include 'sendVerification.php';
+       
+/*  try {
       $pdo = new PDO("mysql:host=$host;dbname=$dbname", $dbusername, $dbpassword);
       //echo "Connected to $dbname at $host successfully.\n";
       $pdo ->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); //Sets PDO attr that control the error mode to throws exceptions
@@ -15,7 +18,7 @@
       die("Could not connect to the database $dbname :" . $e->getMessage());
       $output='Unable to connect to the database server.';
       exit();
-  }
+  }*/
 
   
 
@@ -25,16 +28,35 @@
   $userEmail = $_POST['enteredEmail'];
   //echo($userEmail);
   $valid = validDateEmail($userEmail);
+ 
 
     if($valid){
-        echo'true';
-        include 'sendVerification.php';
+ 
+        $pdo = connect_to_db();
+        $resultset = find_user($pdo, $userEmail);
+        
+        if($resultset->rowcount() == 1){
+          $error = "Username Already Exist!!";
+          $output = 'The username you type already exists in the our Database, If you have lost your password, please click on the "forgotten Password" to obtain a temporary password.';
+          include "login-error.html";
+          exit(0);
 
+
+        }else{
+
+          $temp = "abc";
+          sendEmail($temp);
+
+        }
+        
+        
 
     }else{
-      echo' NO! Please enter a valid @sjsu.edu account';
-      header('location: login-error.html');
-      //exit(0);
+      $error ='Attention!!!';
+      $output ='You must use a "@sjsu.edu" to register an account';
+      //header('location: login-error.html');
+      include "login-error.html";
+      exit(0);
     }
 
   }

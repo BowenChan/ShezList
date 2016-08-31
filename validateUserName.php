@@ -17,17 +17,15 @@ function validDateEmail($email){
       return true;
 
     }else{
-      echo"<br> invalid email address";
+      //echo"<br> invalid email address";
       //include 'register.html';
-        return false;
+        return (int)false;
     }
 
-    
-
   }else{
-    echo"<br> invalid email address";
+    //echo"<br> invalid email address";
     //include 'register.html';
-    return false;
+    return (int)false;
   }
   
     /*echo('got here');
