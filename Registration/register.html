@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>ShezList</title>
+    <title>ShezList Registration</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 </head>
@@ -50,7 +52,7 @@
 
               <!-- change this to User Profile/Log out button if user is already logged in -->
               <ul class="nav navbar-nav navbar-right">
-                <li><a href="register.html#">Register</a></li>
+                <li><a href="register.html">Register</a></li>
               </ul>
               <ul class="nav navbar-nav navbar-right">
                 <li><a href="login.html">Login</a></li>
@@ -65,83 +67,37 @@
         <!--This is the main body the login form-->
         <div class="jumbotron">
             <div class="container-fluid">
-              <form class="form-horizontal">
+              <form class="form-horizontal" action="registration-info.php" method="post">
                 <fieldset>
-                  <legend>Post to a classified</legend>
+                  <legend>Account Registration</legend>
                   <div class="form-group">
-                    <label for="inputEmail" class="col-lg-2 control-label">Title</label>
-                    <div class="col-lg-10">
-                      <input type="text" class="form-control" id="inputEmail" placeholder="Title">
+                    
+                    <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+                    <div class="col-lg-6">
+                      <input type="text" class="form-control form-control-custom" id="inputEmail" name="enteredEmail" placeholder="Email">
                     </div>
-                  </div>
-                  <div class="form-group">
-                    <label for="inputPassword" class="col-lg-2 control-label">Password</label>
+                    <!-- <label for="inputPassword" class="col-lg-2 control-label">Password</label>
                     <div class="col-lg-10">
                       <input type="password" class="form-control" id="inputPassword" placeholder="Password">
-                      <div class="checkbox">
-                        <label>
-                          <input type="checkbox"> Checkbox
-                        </label>
-                      </div>
                     </div>
-                  </div>
-                  <div class="form-group">
-                    <label for="textArea" class="col-lg-2 control-label">Textarea</label>
+                     <label for="inputUsername" class="col-lg-2 control-label">Username</label>
                     <div class="col-lg-10">
-                      <textarea class="form-control" rows="3" id="textArea"></textarea>
-                      <span class="help-block">A longer block of help text that breaks onto a new line and may extend beyond one line.</span>
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label class="col-lg-2 control-label">Radios</label>
-                    <div class="col-lg-10">
-                      <div class="radio">
-                        <label>
-                          <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
-                          Option one is this
-                        </label>
-                      </div>
-                      <div class="radio">
-                        <label>
-                          <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-                          Option two can be something else
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label for="select" class="col-lg-2 control-label">Selects</label>
-                    <div class="col-lg-10">
-                      <select class="form-control" id="select">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                      </select>
-                      <br>
-                      <select multiple="" class="form-control">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <div class="col-lg-10 col-lg-offset-2">
-                      <button type="reset" class="btn btn-default">Cancel</button>
+                      <input type="username" class="form-control" id="inputUsername" placeholder="username">
+                    </div> -->
+                    <div class="col-lg-4 col-lg-offset-2 top-buffer">
                       <button type="submit" class="btn btn-primary">Submit</button>
+                      <a href="../index.html" class="btn btn-custom ">Cancel</a>
                     </div>
-                  </div>
+                 
+
+                 
                 </fieldset>
               </form>
 
             </div>
         </div>
     </div>
-
+</div>
 </body>
 </html>
 
