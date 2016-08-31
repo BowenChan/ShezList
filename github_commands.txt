@@ -1,0 +1,8 @@
+Github:
+git clone (insert http location) - Copy repository and make folder called by it's name
+git status - see what's different (added) between your local repository and online repository
+git add - add a file to be sent to the online repository
+git add -A - adds all files
+git commit -m "(insert quote)" - prepares for commit *if you forget to type -m, press: esc :wq (one at a time)*
+git push - push it to the repository
+git pull - get all updates from everyone to your local repository
