@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>ShezList</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+<!--     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+ --></head>
+<body>
+
+    <div class="container">
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand">ShezList</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="post.html">Post</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Contact Us <span class="caret"></span></a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">Phone</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Email</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Messenger</a></li>
+                  </ul>
+                </li>
+              </ul>
+
+              <!-- area to search, can change to however you want to make it easier for database handling -->
+              <form class="navbar-form navbar-right" role="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Search">
+                </div>
+                <button type="submit" class="btn btn-default">&#128269</button>
+              </form>
+
+              <!-- change this to User Profile/Log out button if user is already logged in -->
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="register.html">Register</a></li>
+              </ul>
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="login.html">Login</a></li>
+              </ul>
+              
+            </div>
+          </div>
+        </nav>
+
+        <!-- Side bar (Will update if there is an already an example of a side bar with bootstrap. Don't wanna put too much effort into a rough draft-->
+
+        <!--This is the main body for the list of categories-->
+        <div class="jumbotron">
+            <div class="container-fluid">
+                <h1><i>ShezList</i></h1>
+                <p>Where you can sell all your things.</p>
+                <!-- First category -->
+                <div class="container">
+                    <h2>Educational Essesntials</h2>
+                    <p><i>What you need for your classes</i></p>
+                    <div class="row">
+                        <!-- Left side of the categories -->
+                        <div class="col-md-4">
+                            <!-- Body -->
+                            <ul class="list-group">
+                              <li class="list-group-item">
+                                <span class="badge">240</span>
+                                Textbooks
+                              </li>
+                              <li class="list-group-item">
+                                <span class="badge">123</span>
+                                Lab Books
+                              </li>
+                              <li class="list-group-item">
+                                <span class="badge">131</span>
+                                Online Lab Keys
+                              </li>
+                            </ul>
+                        </div>
+                        <!-- Middle side of the categories -->
+                        <div class="col-md-4">
+                            <ul class="list-group">
+                              <li class="list-group-item">
+                                <span class="badge">65</span>
+                                Sports Equipment
+                              </li>
+                              <li class="list-group-item">
+                                <span class="badge">57</span>
+                                Groceries
+                              </li>
+                              <li class="list-group-item">
+                                <span class="badge">54</span>
+                                Bags and Backpacks
+                              </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Second Category -->
+                <div class="container">
+                    <h2>Studying</h2>
+                    <p><i>Find others to study with</i></p>
+                    <div class="row">
+                        <!-- Left side of the categories -->
+                        <div class="col-md-4">
+                            <!-- Body -->
+                            <ul class="list-group">
+                              <li class="list-group-item">
+                                <span class="badge">432</span>
+                                Study Buddy
+                              </li>
+                              <li class="list-group-item">
+                                <span class="badge">261</span>
+                                Forming Group Studies
+                              </li>
+                              <li class="list-group-item">
+                                <span class="badge">77</span>
+                                Tutors
+                              </li>
+                            </ul>
+                        </div>
+                        <!-- Middle side of the categories -->
+                        <div class="col-md-4">
+                            <ul class="list-group">
+                              <li class="list-group-item">
+                                <span class="badge">34</span>
+                                Review Session
+                              </li>
+                              <li class="list-group-item">
+                                <span class="badge">215</span>
+                                Study Guides
+                              </li>
+                              <li class="list-group-item">
+                                <span class="badge">467</span>
+                                Review Sheets
+                              </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Third category -->
+                <div class="container">
+                    <h2>For Home</h2>
+                    <p><i>Make your place your own</i></p>
+                    <div class="row">
+                        <!-- Left side of the categories -->
+                        <div class="col-md-4">
+                            <!-- Body -->
+                            <ul class="list-group">
+                              <li class="list-group-item">
+                                <span class="badge">68</span>
+                                Housing
+                              </li>
+                              <li class="list-group-item">
+                                <span class="badge">64</span>
+                                Furniture
+                              </li>
+                              <li class="list-group-item">
+                                <span class="badge">90</span>
+                                Health & Beauty
+                              </li>
+                            </ul>
+                        </div>
+                        <!-- Middle side of the categories -->
+                        <div class="col-md-4">
+                            <ul class="list-group">
+                              <li class="list-group-item">
+                                <span class="badge">101</span>
+                                Electronics
+                              </li>
+                              <li class="list-group-item">
+                                <span class="badge">43</span>
+                                Computers
+                              </li>
+                              <li class="list-group-item">
+                                <span class="badge">68</span>
+                                Backyard
+                              </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+
+
+
+
+
+
