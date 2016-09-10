@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title>ShezList - FAQS</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/faq.js"></script>
+</head>
+
+<body>
+    <!-- Navigation Bar for website -->
+    <div class="container">
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand">ShezList</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="post.html">Post</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Contact Us <span class="caret"></span></a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">Phone</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Email</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Messenger</a></li>
+                  </ul>
+                </li>
+              </ul>
+
+              <!-- area to search -->
+              <form class="navbar-form navbar-right" role="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Search">
+                </div>
+                <button type="submit" class="btn btn-default">&#128269</button>
+              </form>
+
+              <!-- change this to User Profile/Log out button if user is already logged in -->
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Register</a></li>
+              </ul>
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Log In</a></li>
+              </ul>
+              
+            </div>
+          </div>
+        </nav>
+
+        <!-- Side bar -->
+
+        <div class="jumbotron">
+            <div class="container-fluid">
+                <h1><i>ShezList</i></h1>
+                <p>Where you can sell all your things.</p>
+                
+                <!--This is the main body for the list of frequently asked questions -->
+                <div id="page-wrap">
+                    <div class="container">
+                      <h2>FAQs</h2>
+                      <button type="faqsubmit" >ADD FAQ</button>
+                
+                        <dl class="faq">
+                          <dt>What is ShezList?</dt>
+                          <dd class="answer"><div>A website to sell your stuff to people you may or may not know or care.</div></dd>
+                        </dl>
+                        
+                        <dl class="faq">
+                          <dt>Is ShezList free?</dt>
+                          <dd class="answer"><div>Nope... Just kidding! ShezList is absolutely free.</div></dd>
+                        </dl>
+                        
+                        <dl class="faq">
+                          <dt>Did not receive payment from buyer. How do I claim back my item?</dt>
+                          <dd class="answer"><div>You can contact our customer support and they will be able to track down the buyer and threaten him or her to send the payment.</div></dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
+
+
+
+
+
+
