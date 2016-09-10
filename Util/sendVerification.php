@@ -44,7 +44,7 @@ function createTempPW(){
 	  $m->AltBody = 'This is the body of an email';
 
 	  if($m->send()){
-	  	echo'<br>Email Sent';
+	  	echo'<br>Email Sent! <br> If dont see an email in your inbox, please check your SPAM folder';
 	  }else{
 	  	echo $m->ErrorInfo;
 	  }
