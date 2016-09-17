@@ -30,6 +30,9 @@ CREATE TABLE IF NOT EXISTS `shezlist`.`user_account`(
 	`user_id` INT NOT NULL,
 	`username` VARCHAR(40) NULL,
 	`password` VARCHAR(40) NULL,
+	-- Added Hash Password --
+	`hashPassword` varChar(40) NULL,
+	PRIMARY KEY(`user_id`),
 	INDEX `user_id_idx`(`user_id` ASC),
 	CONSTRAINT `user_id`
 		FOREIGN KEY (`user_id`)
@@ -48,7 +51,7 @@ CREATE TABLE IF NOT EXISTS `shezlist`.`privilege_rights`(
 	`role_id` INT NOT NULL AUTO_INCREMENT,
 	`role` VARCHAR(40) NULL,
 	`read` INT NULL,
-	`delete` INT NULL,
+	`deleteP` INT NULL,
 	`write` INT NULL,
 	`delete_all` INT NULL,
 	`ban` INT NULL,
@@ -60,14 +63,26 @@ CREATE TABLE IF NOT EXISTS `shezlist`.`privilege_rights`(
 	UNIQUE INDEX `role_id_unique` (`role_id` ASC)
 
 );
+
+-- ---------------------------------------------------
+-- -------  Inserting TABLE Privilege Rights  --------
+-- ---------------------------------------------------
+
+INSERT INTO `shezlist`.`privilege_rights`(`role`, `read`, `deleteP`, `write`, `delete_all`, `ban`, `block`, `remove`, `give_admin_access`, `modify_db`) VALUES
+("member", 0,0,0,0,0,0,0,0,0),
+("moderator", 0,0,0,0,0,0,0,0,0),
+("admin",1,1,1,1,1,1,1,1,1);
+
 -- ---------------------------------------------------
 -- --------  CREATING TABLE USER ACCESS --------------
 -- ---------------------------------------------------
 DROP TABLE IF EXISTS `shezlist`.`user_access`;
 
 CREATE TABLE IF NOT EXISTS `shezlist`.`user_access` (
-	`UA_user_id` INT NULL,
+	`UA_user_id` INT NOT NULL,
 	`UA_role_id` INT NULL,
+	PRIMARY KEY (`UA_user_id`),
+	UNIQUE INDEX `UA_user_id_unique` (`UA_user_id` ASC),
 	INDEX `UA_user_id_idx` (`UA_user_id` ASC),
 	INDEX `UA_role_id_idx` (`UA_role_id` ASC),
 	CONSTRAINT `UA_user_id`
@@ -123,6 +138,17 @@ CREATE TABLE IF NOT EXISTS `shezlist`.`condition`(
 	UNIQUE KEY `condition_id_unique` (`condition_id` ASC)
 
 );
+
+-- ---------------------------------------------------
+-- -------------  INSERTING CONDITION ----------------
+-- ---------------------------------------------------
+
+INSERT INTO `shezlist`.`condition`(`quality`) VALUES
+('POOR'),
+('DECENT'),
+('WORN DOWN'),
+('NEW');
+
 -- ---------------------------------------------------
 -- -------------  CREATING TABLE POST ----------------
 -- ---------------------------------------------------
@@ -136,6 +162,7 @@ CREATE TABLE IF NOT EXISTS `shezlist`.`post`(
 	`description` VARCHAR(40) NULL,
 	`book_isbn` INT NULL,
 	`condition_id` INT NULL,
+	`image_url` VARCHAR(40) NULL,
 	PRIMARY KEY (`post_id`),
 	UNIQUE KEY `post_id_unique` (`post_id` ASC),
 	INDEX `pst_user_id_idx` (`pst_user_id` ASC),
