@@ -77,3 +77,13 @@
 
 
 ?>
+
+<!DOCTYPE html>
+<html>
+<head>  
+  <title></title>
+</head>
+<body>
+  <h> Thank you for all your information ASSHOLE </h>
+</body>
+</html>
