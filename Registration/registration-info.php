@@ -60,7 +60,6 @@
           sendEmail($userEmail, $temp_pwd); 
 
 
-
         }
         
         
@@ -73,6 +72,8 @@
       include '../Util/error_page.html';
       exit(0);
     }
+
+
 
   }
 

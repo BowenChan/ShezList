@@ -40,7 +40,14 @@ function sendEmail($email, $temp_pw){
 	  $m->AltBody = 'This is the body of an email';
 
 	  if($m->send()){
-	  	echo'<br>Email Sent! <br> If dont see an email in your inbox, please check your SPAM folder';
+
+	  	  $error_title = 'Successful';
+          $error = "Registration is complete!";
+          $output = '<br>You should receive an email. <br> If dont see an email in your inbox, please check your SPAM folder';
+          include '../Util/success_page.html';
+          exit(0);
+
+	  	echo'';
 	  }else{
 	  	echo $m->ErrorInfo;
 	  }
