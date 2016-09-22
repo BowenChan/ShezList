@@ -72,6 +72,6 @@
   <title></title>
 </head>
 <body>
-  <h> Thank you for all your information ASSHOLE </h>
+  <h> Thank you for all your information </h>
 </body>
 </html>
