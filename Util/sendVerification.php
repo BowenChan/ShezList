@@ -1,19 +1,15 @@
 <?php
 
-function sendEmail($email){
+function sendEmail($email, $temp_pw){
 	if(require_once '../PHPMailer/PHPMailerAutoload.php'){
 		echo'successful';
 	}else{
 		echo'not succesful';
 	}
 	
-function createTempPW(){
+	  $pw = $temp_pw;	
 
-		return 'abc';
 
-}
-
-	  $pw = createTempPW();	
 
 	  $m = new PHPMailer;
 

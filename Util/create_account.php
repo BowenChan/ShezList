@@ -26,11 +26,21 @@ function create_user($pdo, $userEmail, $temp_pwd, $hash_val){
 
 		$val = $r2->fetchColumn();
 		//print("user_id= $val\n");
-		echo($val);
+		echo("<br>").($val);
 
+		//$sql = 'INSERT INTO user_account(user_id, password, hashPassword) VALUES (:userID, :temp_pwd, :hash_pwd)'; /*with hashpassword */
+		
+		$sql = 'INSERT INTO user_account(user_id, password) VALUES (:userID, :temp_pwd)';
+		
+		$r3 = $pdo->prepare($sql);
+		$r3->bindValue(':userID', $val);
+		$r3->bindValue(':temp_pwd', $temp_pwd);
+		//$r3->bindValue(':hash_pwd', $hash_val);  /* Hash is too large for database */
 
-		exit(0);
-		return $resultset;
+		$r3->execute();
+ 	
+ 		//exit(0);
+		//return $resultset;
 
 	} catch (PDOException $e){
 

@@ -51,13 +51,15 @@
           $temp_pwd = createPassword();
           $hash_val = hashPassword($temp_pwd);
 
-          echo($temp_pwd).'<br>'.$hash_val;
+          //echo($temp_pwd).'<br>'.$hash_val;
 
-          create_user($pdo, $userEmail, $temp_pwd, $hash_val);
+          create_user($pdo, $userEmail, $temp_pwd, $hash_val);  /* Hash is too big for database */
 
           
 
-          //sendEmail($userEmail);
+          sendEmail($userEmail, $temp_pwd); 
+
+
 
         }
         
