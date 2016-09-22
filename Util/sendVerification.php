@@ -1,19 +1,15 @@
 <?php
 
-function sendEmail($email){
+function sendEmail($email, $temp_pw){
 	if(require_once '../PHPMailer/PHPMailerAutoload.php'){
 		echo'successful';
 	}else{
 		echo'not succesful';
 	}
 	
-function createTempPW(){
+	  $pw = $temp_pw;	
 
-		return 'abc';
 
-}
-
-	  $pw = createTempPW();	
 
 	  $m = new PHPMailer;
 
@@ -44,7 +40,7 @@ function createTempPW(){
 	  $m->AltBody = 'This is the body of an email';
 
 	  if($m->send()){
-	  	echo'<br>Email Sent';
+	  	echo'<br>Email Sent! <br> If dont see an email in your inbox, please check your SPAM folder';
 	  }else{
 	  	echo $m->ErrorInfo;
 	  }

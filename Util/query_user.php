@@ -14,10 +14,11 @@ function find_user($pdo, $username){
 
 	} catch (PDOException $e){
 
-		$error = "Database Query Error";
+		$error_title = "Database Query";
+		$error = "User name already exists";
 		$output='Catch: '. $e->getMessage();
 			
-		include 'login-error.html';
+		include 'error_page.html';
 		exit(0);
 		//include 'output.html.php';
 			

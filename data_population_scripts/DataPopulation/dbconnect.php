@@ -3,7 +3,7 @@
 
 	$servername = "localhost";
 	$username = "root";
-	$password = "";
+	$password = "sesame";
 	$db = "shezlist";
 
 	/**
