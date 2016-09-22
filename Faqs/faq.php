@@ -1,5 +1,5 @@
 <?php
-  $db = mysqli_connect('localhost', 'root', '', 'shezlist')
+  $db = mysqli_connect('localhost', 'root', 'sesame', 'shezlist')
      or die('Error connecting to MySQL server.');
   //if (!$db) {
   //  echo "Error: Unable to connect to MySQL." . PHP_EOL;
