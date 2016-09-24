@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>ShezList Registration</title>
+    <title>ShezList Registration - Info</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
@@ -20,7 +20,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
-              </button>
+              </button>   
               <a class="navbar-brand">ShezList</a>
             </div>
 
@@ -28,7 +28,7 @@
               <ul class="nav navbar-nav">
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="../post.html">Post</a></li>
-                <li><a href="../Faqs/faq.php">FAQ</a></li>
+                <li><a href="../faq.html">FAQ</a></li>
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Contact Us <span class="caret"></span></a>
                   <ul class="dropdown-menu" role="menu">
@@ -54,7 +54,7 @@
                 <li><a href="register.html">Register</a></li>
               </ul>
               <ul class="nav navbar-nav navbar-right">
-                <li><a href="../index.html">Login</a></li>
+                <li><a href="login.html">Login</a></li>
               </ul>
               
             </div>
@@ -66,40 +66,39 @@
         <!--This is the main body the login form-->
         <div class="jumbotron">
             <div class="container-fluid">
-              <form class="form-horizontal" action="registration-info.php" method="post">
+              <form class="form-horizontal">
                 <fieldset>
                   <legend>Account Registration</legend>
                   <div class="form-group">
-                    
-                    <label for="inputEmail" class="col-lg-2 control-label">Email</label>
-                    <div class="col-lg-6">
-                      <input type="text" class="form-control form-control-custom" id="inputEmail" name="enteredEmail" placeholder="Email">
-                    </div>
-                    <!-- <label for="inputPassword" class="col-lg-2 control-label">Password</label>
+                    <label for="username" class="col-lg-2 control-label">Create User Name</label>
                     <div class="col-lg-10">
-                      <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                      <input type="text" class="form-control form-control-custom " id="username"  placeholder="Create User Name">
                     </div>
-                     <label for="inputUsername" class="col-lg-2 control-label">Username</label>
+                    <label for="phone_number" class="col-lg-2 control-label">Phone Number</label>
                     <div class="col-lg-10">
-                      <input type="username" class="form-control" id="inputUsername" placeholder="username">
-                    </div> -->
-                    <div class="col-lg-4 col-lg-offset-2 top-buffer">
-                      <button type="submit" class="btn btn-primary">Submit</button>
-                      <a href="../index.html" class="btn btn-custom ">Cancel</a>
-                    </div>
-                 
+                      <input type="text" class="form-control" id="phone_number" placeholder="Phone Number">
+                    </div class="col-lg-10">
+                    <label for="about_yourself" class="col-lg-2 control-label">About Yourself</label>
+                      <div class="col-lg-10">
+                      
+                        <textarea class = "form-control" row = "5" id="about_yourself"> </textarea>
+                      </div>
 
-                 
+                    </div>
+                    <div class="col-lg-10 col-lg-offset-2">
+                      <button type="reset" class="btn btn-default">Cancel</button>
+                      <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                  </div>
                 </fieldset>
               </form>
 
             </div>
         </div>
     </div>
-</div>
+
 </body>
 </html>
-
 
 
 

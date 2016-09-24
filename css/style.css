@@ -63,6 +63,8 @@
 
 			}
 
+
+
 #login {
 			background-color: #f9dc06;
 
@@ -189,6 +191,23 @@ input::-moz-placeholder { /* Mozilla Firefox 19+ */
 input:-ms-input-placeholder { /* Internet Explorer 10-11 */
    color:    #000000 !important;
 }
+
+
+textarea::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    #776644 !important;
+}
+textarea:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    #776644 !important;
+   opacity:  1;
+}
+textarea::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    #FFFFFF !important;
+   opacity:  1;
+}
+textarea:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    #000000 !important;
+}
+
 
 /* changes glow in text box */
 .form-control:focus {
