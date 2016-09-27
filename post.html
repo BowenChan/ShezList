@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type = "text/css" href="css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 </head>
@@ -41,7 +42,7 @@
               </ul>
 
               <!-- area to search, can change to however you want to make it easier for database handling -->
-              <form class="navbar-form navbar-right" role="search">
+              <form class="navbar-form navbar-right" role="search" >
                 <div class="form-group">
                   <input type="text" class="form-control" placeholder="Search">
                 </div>
@@ -65,74 +66,69 @@
         <!--This is the main body the login form-->
         <div class="jumbotron">
             <div class="container-fluid">
-              <form class="form-horizontal">
+              <form class="form-horizontal" action="Post/post-info.php" method="post">
                 <fieldset>
                   <legend>Post to a classified</legend>
                   <div class="form-group">
                     <label for="inputEmail" class="col-lg-2 control-label">Title</label>
                     <div class="col-lg-10">
-                      <input type="text" class="form-control" id="inputEmail" placeholder="Title">
+                      <input type="text" class="form-control form-control-custom" id="inputEmail" placeholder="Title">
                     </div>
                   </div>
                   <div class="form-group">
-                    <label for="inputPassword" class="col-lg-2 control-label">Password</label>
+                    <label for="isbn" class="col-lg-2 control-label">Book ISBN</label>
                     <div class="col-lg-10">
-                      <input type="password" class="form-control" id="inputPassword" placeholder="Password">
-                      <div class="checkbox">
-                        <label>
-                          <input type="checkbox"> Checkbox
-                        </label>
-                      </div>
+                      <input type="text" class="form-control form-control-custom" placeholder="Book ISBN">
                     </div>
                   </div>
                   <div class="form-group">
-                    <label for="textArea" class="col-lg-2 control-label">Textarea</label>
+                    <label for="textArea" class="col-lg-2 control-label">Description</label>
                     <div class="col-lg-10">
-                      <textarea class="form-control" rows="3" id="textArea"></textarea>
+                      <textarea type="text" class="form-control form-control-custom font-white" rows="3" id="textArea" placeholder="Description"></textarea>
                       <span class="help-block">A longer block of help text that breaks onto a new line and may extend beyond one line.</span>
                     </div>
                   </div>
                   <div class="form-group">
-                    <label class="col-lg-2 control-label">Radios</label>
+                    <label class="col-lg-2 control-label">Book Type</label>
                     <div class="col-lg-10">
                       <div class="radio">
                         <label>
                           <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
-                          Option one is this
+                          Paperback
                         </label>
                       </div>
                       <div class="radio">
                         <label>
                           <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-                          Option two can be something else
+                          Hard Cover
                         </label>
                       </div>
                     </div>
                   </div>
                   <div class="form-group">
-                    <label for="select" class="col-lg-2 control-label">Selects</label>
+                    <label for="select" class="col-lg-2 control-label">Condition of Book</label>
                     <div class="col-lg-10">
-                      <select class="form-control" id="select">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
+                      <select class="form-control form-control-custom font-white" id="select">
+                        <option>1 - (Poor) Bent, Highlighted, Margin Notes</option>
+                        <option>2 - (Average) Checking out from a kids library book </option>
+                        <option>3 - (Moderate) Signs of usesage</option>
+                        <option>4 - (Like NEW) No signs of usage</option>
+                        <option>5 - (Mint Condition) Not touched</option>
                       </select>
                       <br>
-                      <select multiple="" class="form-control">
+                      <!-- <select multiple="" class="form-control form-control-custom">
                         <option>1</option>
                         <option>2</option>
                         <option>3</option>
                         <option>4</option>
                         <option>5</option>
-                      </select>
+                      </select> -->
                     </div>
                   </div>
                   <div class="form-group">
                     <div class="col-lg-10 col-lg-offset-2">
-                      <button type="reset" class="btn btn-default">Cancel</button>
                       <button type="submit" class="btn btn-primary">Submit</button>
+                      <button type="reset" class="btn btn-custom">Cancel</button>
                     </div>
                   </div>
                 </fieldset>

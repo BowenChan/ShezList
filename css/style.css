@@ -209,6 +209,17 @@ textarea:-ms-input-placeholder { /* Internet Explorer 10-11 */
 }
 
 
+select:focus, input:focus{
+	color:#ffffff;
+}
+
+.font-white{
+	color:#ffffff;
+
+}
+
+
+
 /* changes glow in text box */
 .form-control:focus {
         border-color: #D49F0C;
@@ -243,3 +254,4 @@ textarea:-ms-input-placeholder { /* Internet Explorer 10-11 */
   border-color: #c71c22;
 
 }
+
