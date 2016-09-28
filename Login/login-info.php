@@ -20,6 +20,7 @@ $pdo = connect_to_db();
 				$error_title = 'Login';
 				$error ='Invalid Email Address';
 				$output ='Must use a "@sjsu.edu" domain name';
+				$redirect = "../index.html";
 				include '../Util/error_page.html';
 				//include "login-errorOLD.html";
 				

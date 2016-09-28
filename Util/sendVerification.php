@@ -44,6 +44,7 @@ function sendEmail($email, $temp_pw){
 	  	  $error_title = 'Successful';
           $error = "Registration is complete!";
           $output = '<br>You should receive an email. <br> If dont see an email in your inbox, please check your SPAM folder';
+          $redirect = "../index.html";
           include '../Util/success_page.html';
           exit(0);
 

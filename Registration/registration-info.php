@@ -41,6 +41,7 @@
           $error_title = 'Account';
           $error = "Username Already Exist!!";
           $output = 'The username you type already exists in the our Database, If you have lost your password, please click on the "forgotten Password" to obtain a temporary password.';
+          $redirect = "../index.html";
           include '../Util/error_page.html';
           exit(0);
 
@@ -68,6 +69,7 @@
       $error_title = 'Registration';
       $error ='Attention!!!';
       $output ='You must use a "@sjsu.edu" to register an account';
+      $redirect = "../Registration/register.html";
       //header('location: login-error.html');
       include '../Util/error_page.html';
       exit(0);
