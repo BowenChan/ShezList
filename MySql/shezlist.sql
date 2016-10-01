@@ -150,6 +150,31 @@ INSERT INTO `shezlist`.`condition`(`quality`) VALUES
 ('NEW');
 
 -- ---------------------------------------------------
+-- ----------  CREATING TABLE CONDITION --------------
+-- ---------------------------------------------------
+
+DROP TABLE IF EXISTS `shezlist`.`category`;
+
+CREATE TABLE IF NOT EXISTS `shezlist`.`condition`(
+	`category_id` INT NOT NULL AUTO_INCREMENT,
+	`categoryType` VARCHAR(40) NOT NULL,
+	PRIMARY KEY (`category_id`),
+	UNIQUE KEY `category_id_unique` (`category_id` ASC)
+
+);
+
+
+-- ---------------------------------------------------
+-- -------------  INSERTING Category ----------------
+-- ---------------------------------------------------
+
+INSERT INTO `shezlist`.`category`(`categorType`) VALUES
+('MATH'),
+('ENGLISH'),
+('HISTORY'),
+('SCIENCE');
+
+-- ---------------------------------------------------
 -- -------------  CREATING TABLE POST ----------------
 -- ---------------------------------------------------
 
@@ -160,7 +185,7 @@ CREATE TABLE IF NOT EXISTS `shezlist`.`post`(
 	`pst_user_id` INT NOT NULL,
 	`title` VARCHAR(40) NULL,
 	`description` VARCHAR(40) NULL,
-	`book_isbn` INT NULL,
+	`book_category` INT NULL,
 	`condition_id` INT NULL,
 	`image_url` VARCHAR(40) NULL,
 	PRIMARY KEY (`post_id`),
