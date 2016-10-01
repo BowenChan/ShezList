@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>ShezList</title>
+    <title>ShezList Registration - Info</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 </head>
@@ -65,26 +66,53 @@
         <!--This is the main body the login form-->
         <div class="jumbotron">
             <div class="container-fluid">
-              <form class="form-horizontal">
+              <form class="form-horizontal" action="" method="post">
                 <fieldset>
                   <legend>Account Registration</legend>
                   <div class="form-group">
-                    <label for="inputEmail" class="col-lg-2 control-label">Email</label>
-                    <div class="col-lg-10">
-                      <input type="text" class="form-control" id="inputEmail" placeholder="Email">
+                  
+                    <div class = "row">
+                      <div class ="col-lg-2 col-md-3  col-xs-7">
+                        <label for="username" class="col-lg-2control-label">Create User Name</label>
+                      </div>
+                      <div class="col-lg-7 col-md-7  col-xs-8">
+                        <input type="text" class="col-lg-1 form-control form-control-custom" id="username" placeholder="User Name">
+                        </div>
                     </div>
-                    <label for="inputPassword" class="col-lg-2 control-label">Password</label>
-                    <div class="col-lg-10">
-                      <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+
+                    <div class="row">
+                      <div class="col-lg-2 col-md-3  col-xs-7">
+                        <label for="phone_number" class="control-label">Phone Number</label>
+                      </div>
+                      <div class="col-lg-7 col-md-7  col-xs-8">
+                        <input type="text" class="form-control form-control-custom" id="phone_number" placeholder="Phone Number">
+                      </div>
                     </div>
-                     <label for="inputUsername" class="col-lg-2 control-label">Username</label>
-                    <div class="col-lg-10">
-                      <input type="username" class="form-control" id="inputUsername" placeholder="Password">
+                    <div class="row">
+                      <div class="col-lg-2 col-md-3  col-xs-7">
+                        <label for="about_yourself" class="control-label">About Yourself</label>
+                      </div>
+                      
+                      <div class="col-lg-7 col-md-7  col-xs-8">
+                        
+                        <textarea type="text" class="form-control form-control-custom font-white" id="about_yourself" placeholder="About yourself"></textarea>
+                      </div>
+
                     </div>
-                    <div class="col-lg-10 col-lg-offset-2">
-                      <button type="reset" class="btn btn-default">Cancel</button>
-                      <button type="submit" class="btn btn-primary">Submit</button>
+
+                    <div class="row top-buffer">
+                        <div class="col-lg-2 col-lg-push-2 col-md-push-3">
+                          <button type="submit" class="btn btn-primary">Submit</button>
+                          <button type="reset" class="btn btn-default">Cancel</button>
+                        </div>  
                     </div>
+                    
+                  
+                    </div>
+
+                    </div>
+                    
+                    
                   </div>
                 </fieldset>
               </form>

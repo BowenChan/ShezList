@@ -5,6 +5,8 @@
     include "../Util/make_connection.php";
     include "../Util/query_user.php";
     include "../Util/sendVerification.php";
+    include "../Util/pwd_generator.php";
+    include "../Util/create_account.php";
        
 /*  try {
       $pdo = new PDO("mysql:host=$host;dbname=$dbname", $dbusername, $dbpassword);
@@ -39,13 +41,25 @@
           $error_title = 'Account';
           $error = "Username Already Exist!!";
           $output = 'The username you type already exists in the our Database, If you have lost your password, please click on the "forgotten Password" to obtain a temporary password.';
-          include "../Login/login-error.html";
+          $redirect = "../index.html";
+          include '../Util/error_page.html';
           exit(0);
 
 
         }else{
 
-          sendEmail($userEmail);
+          $pdo = connect_to_db();
+          $temp_pwd = createPassword();
+          $hash_val = hashPassword($temp_pwd);
+
+          //echo($temp_pwd).'<br>'.$hash_val;
+
+          create_user($pdo, $userEmail, $temp_pwd, $hash_val);  /* Hash is too big for database */
+
+          
+
+          sendEmail($userEmail, $temp_pwd); 
+
 
         }
         
@@ -55,10 +69,13 @@
       $error_title = 'Registration';
       $error ='Attention!!!';
       $output ='You must use a "@sjsu.edu" to register an account';
+      $redirect = "../Registration/register.html";
       //header('location: login-error.html');
-      include "../Login/login-error.html";
+      include '../Util/error_page.html';
       exit(0);
     }
+
+
 
   }
 
@@ -66,12 +83,3 @@
 
 ?>
 
-<!DOCTYPE html>
-<html>
-<head>  
-  <title></title>
-</head>
-<body>
-  <h> Thank you for all your information ASSHOLE </h>
-</body>
-</html>

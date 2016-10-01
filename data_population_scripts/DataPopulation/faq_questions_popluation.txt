@@ -1,0 +1,6 @@
+COMMENT='Frequently Asked Questions - Questions' |
+
++-------------------+-------------------+------------------------------------------------------------------+
+| Q1                | Q2                | Q3                                                               |
++-------------------+-------------------+------------------------------------------------------------------+
+| What is ShezList? | Is ShezList free? | Did not receive payment from buyer. How do I claim back my item?

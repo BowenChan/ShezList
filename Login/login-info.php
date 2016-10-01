@@ -5,8 +5,6 @@ include "../Util/make_connection.php";
 include "../Util/query_user.php";
 include "../Util/validateUserName.php";
 
-
-
 $pdo = connect_to_db();
 
 
@@ -22,7 +20,10 @@ $pdo = connect_to_db();
 				$error_title = 'Login';
 				$error ='Invalid Email Address';
 				$output ='Must use a "@sjsu.edu" domain name';
-				include "login-error.html";
+				$redirect = "../index.html";
+				include '../Util/error_page.html';
+				//include "login-errorOLD.html";
+				
 				exit(0);
 			}
 			/*$sql = 'SELECT user_account.username, user_account.user_id FROM user_account, user WHERE user.email = "'.$username.'"" AND user.account password = "'.$password.'"';
@@ -54,7 +55,7 @@ $pdo = connect_to_db();
 					$error_title = '';
 					$error="Password is incorrect";
 					$output='Please type the correct password ';
-					include 'login-error.html';
+					include '../Util/error_page.html';
 				}
 				
 
@@ -82,7 +83,7 @@ $pdo = connect_to_db();
 			}else{
 				$error="Error";
 				$output='No such user account found in Database';
-				include 'login-error.html';
+				include '../Util/error_page.html';
 				
 				
 			}
