@@ -13,7 +13,10 @@
 	readAndScrape();
 	$dom = new DOMDocument();
 	$isbnAmnt = retrieveFileLength("listOfISBN.txt");
-	echo $isbnAmnt;
+
+	echo "Adding " . $isbnAmnt+1 . " into the database <br>";
+
+	DataScrape($pdo);
 	/*
 	for($i = 0 ; $i < $isbnAmnt; $i++){
 		libxml_use_internal_errors(true);
@@ -53,77 +56,66 @@
 	function randCategory(){
 		
 	}
-	function DataScrape(){
-		//$agent = 'Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 1.0.3705; .NET CLR 1.1.4322)';
+	function DataScrape($pdo){
+
+		//CONSTANTS VARIABLES
+		$genericDescription = "This is a filler";
+		$infoXPath = '//span[@id="productTitle"]';
+		$bookXPath = '//div[@class="a-row a-spacing-small"]/a/@href';
+		//Opening up the listOFISBN.txt file
 		$filename = 'listOfISBN.txt';
-		$file = fopen($filename, "r") or die ("CANNOT OPEN FILE");
-		global $isbnAmnt;
-		for($iteration = 0; $iteration < $isbnAmnt; $iteration++){
+		$file = fopen($filename, "r") or die ("Cannot open file");
+		//$agent = 'Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 1.0.3705; .NET CLR 1.1.4322)';
+		while(!feof($file)){
 			
+			//Retrieving the isbnNumber from the file
+			$isbnNumber = fgets($file);
+
+			//DEBUG: Printing the ISBN Number
+			echo $isbnNumber . "<br>";
 			
-
-			/*$ch = curl_init($url);
-
-			curl_setopt($ch, CURLOPT_HEADER, 0);
-			curl_setopt($ch, CURLOPT_FILE, $file);
-			curl_setopt($ch, CURLOPT_FAILONERROR, 0);
-			//curl_setopt($ch, CURLOPT_USERAGENT, $agent);
-			curl_setopt($ch, CURLOPT_FOLLOWLOCATION,true);
-			
-			$contents  =curl_exec($ch);
-			echo $contents;
-			//$html = new simple_html_dom();
-			//$html->load($contents, true, false);
-			#fwrite($file, $contents);
-			//foreach($html->find('head') as $d) {
-	        //	$d->innertext = "<base href='$url'>" . $d->innertext;
-	    	//}
-			//echo $html->save();
-			curl_close($ch);
-			fclose($file);*/
-
-				//Creating file to write into
-			$filename = 'information.txt';
-			$file = fopen($filename, "w") or die("CANNOT OPEN FILE");
-
-			//Scraping ISBN from http://www.topshelfcomix.com/catalog/isbn-list
-			$isbnNumber = 9781603090636;
-				//^^^^^^^^^^^^^^^^
-			//GET THE LINE corresponding to the isbn number
-			
+			//Loading the book url
 			$dom = new DOMDocument();
 			libxml_use_internal_errors(true);
+
 			$dom->loadHTMLFILE('https://www.amazon.com/gp/search/ref=sr_adv_b/?search-alias=stripbooks&unfiltered=1&field-keywords=&field-author=&field-title=&field-isbn='. $isbnNumber . '&field-publisher=&node=&field-p_n_condition-type=&p_n_feature_browse-bin=&field-age_range=&field-language=&field-dateop=During&field-datemod=&field-dateyear=&sort=relevanceexprank&Adv-Srch-Books-Submit.x=32&Adv-Srch-Books-Submit.y=6');
+
 			libxml_use_internal_errors(false);
 			$xml = simplexml_import_dom($dom);
-			$links = $xml->xpath('//div[@class="a-row a-spacing-small"]/a/@href');
-			
-			echo $links[0]['href'];
-			$newURL = $links[0]['href'];
+
+			//Access the first result of the search
+			$link = $xml->xpath($bookXPath);
+
+			//Loading the book's url for information
+			$currentURL = $link[0]['href'];
+			echo $currentURL;
+
 			libxml_use_internal_errors(true);
-			$dom->loadHTMLFILE($newURL);
+			$dom->loadHTMLFILE($currentURL);
 			libxml_use_internal_errors(false);
+
 			$xml = simplexml_import_dom($dom);
-			$linksNew = $xml->xpath('//span[@id="productTitle"]');
+			$link = $xml->xpath($infoXPath);
 			echo "<br>";
-			$bookStmt = $pdo->prepare("INSERT INTO `post` (pst_user_id, title, description, book_category, condition) VALUES (:pst_user_id, :title, :description, :book_category, :condition");
-			foreach($linksNew as $l){
-				echo "<br>";
-				$randomGen = $randNumber();
-				$bookStmt->bindParam(':pst_user_id', $randomGen);
+
+			$bookStmt = $pdo->prepare("INSERT INTO `post` (pst_user_id, title, description, book_category, condition_id) VALUES (:pst_user_id, :title, :description, :book_category, :condition_id)");
+			foreach($link as $l){
+				$randomGen1 = randNumber();
+				$bookStmt->bindParam(':pst_user_id', $randomGen1);
 				$bookStmt->bindParam(':title', $l[0]);
-				$bookStmt->bindParam(':description', "ASDFGDFHGSFRAT");
-				$bookStmt->bindParam(':book_category', $randomGen);
-				$bookStmt->bindParam(':condition', $randomGen);
-				$bookStmt->execute();
-				
+				$bookStmt->bindParam(':description', $genericDescription);
+				$bookStmt->bindParam(':book_category', $randomGen1);
+				$bookStmt->bindParam(':condition_id', $randomGen1);
+
+				echo $bookStmt->execute();
+
 
 				echo $l[0];
 				echo "<br>";
-
-
+				echo "<br>";
 			}
-		}
+			
+		}	
 			echo "<br>";
 			fclose($file);
 		}
